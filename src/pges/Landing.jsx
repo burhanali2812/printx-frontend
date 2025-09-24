@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../images/logo3.png";
-import de from "../images/de.jpg";
-import "../style/landing.css"
+import main from "../images/main.png";
+import mission from "../images/mission.png";
+import "../style/landing.css";
 function Landing() {
   return (
     <div style={{ width: "98%", marginLeft: "auto", marginRight: "auto" }}>
@@ -84,7 +85,7 @@ function Landing() {
         </div>
       </nav>
 
-      <div className="row align-items-center">
+      <div className="row align-items-center container">
         {/* Left side text */}
         <div className="col-md-6">
           <h1 className="fw-bold">Hello</h1>
@@ -96,11 +97,11 @@ function Landing() {
         {/* Right side image */}
         <div className="col-md-6 text-center">
           <img
-            src={de}
+            src={main}
             alt="Main"
             style={{
               width: "100%",
-              maxHeight: "500px",
+              maxHeight: "900px",
               objectFit: "cover",
               borderRadius: "10px",
             }}
@@ -108,31 +109,64 @@ function Landing() {
         </div>
       </div>
 
- <div className="card border-0 shadow-sm bg-dark mt-4 text-light p-4 p-md-5 text-center">
-  <h1
-    className="fw-bold text-uppercase mb-3"
-    style={{ fontFamily: "revert-layer", fontSize: "clamp(1.5rem, 4vw, 2.5rem)" }}
-  >
-    Our Mission
-  </h1>
-  <p
-    className="lead mx-auto"
-    style={{
-      lineHeight: "1.8",
-      maxWidth: "900px",
-      fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
-    }}
-  >
-    Our mission is to revolutionize the traditional printing process in Pakistan by creating a smart,
-    fully automated, and AI-enabled printing ecosystem. We aim to eliminate inefficiencies such as
-    long queues, manual handling, and high printing costs by providing users with an accessible digital
-    platform that connects universities, local print shops, and students. Through intelligent recommendations,
-    real-time monitoring, and location-based shop selection, our system ensures affordability, transparency,
-    and convenience while promoting eco-friendly printing practices.
-  </p>
-</div>
+      <div className="card border-0 shadow-sm bg-dark mt-4 text-light p-4 p-md-5">
+        <h1
+          className="fw-bold text-uppercase text-center mb-4"
+          style={{
+            fontFamily: "revert-layer",
+            fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+          }}
+        >
+          Our Mission
+        </h1>
 
+        <div className="row align-items-center">
+          {/* Left Image */}
+          <div className="col-12 col-md-5 text-center mb-3 mb-md-0">
+            <img
+              src={mission}
+              alt="Mission"
+              className="img-fluid rounded"
+              style={{
+                maxHeight: "400px",
+                objectFit: "cover",
+              }}
+            />
+          </div>
 
+          {/* Vertical Divider (only visible on medium+ screens) */}
+          <div className="d-none d-md-flex col-md-1 justify-content-center">
+            <div
+              style={{
+                width: "2px",
+                backgroundColor: "#6c757d", // light gray divider
+                height: "80%",
+              }}
+            ></div>
+          </div>
+
+          {/* Right Text */}
+          <div className="col-12 col-md-6">
+            <p
+              className="lead mx-auto text-center text-md-start"
+              style={{
+                lineHeight: "1.8",
+                fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+              }}
+            >
+              Our mission is to revolutionize the traditional printing process
+              in Pakistan by creating a smart, fully automated, and AI-enabled
+              printing ecosystem. We aim to eliminate inefficiencies such as
+              long queues, manual handling, and high printing costs by providing
+              users with an accessible digital platform that connects
+              universities, local print shops, and students. Through intelligent
+              recommendations, real-time monitoring, and location-based shop
+              selection, our system ensures affordability, transparency, and
+              convenience while promoting eco-friendly printing practices.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
