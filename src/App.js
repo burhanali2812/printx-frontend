@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import Landing from './pges/Landing';
 
 function App() {
   return (
-   <h1> Frontend Working Successfully!</h1>
+   <Landing/>
   );
 }
 
