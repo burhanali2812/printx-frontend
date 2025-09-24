@@ -85,27 +85,52 @@ function Landing() {
         </div>
       </nav>
 
-      <div className="row align-items-center container">
-        {/* Left side text */}
-        <div className="col-md-6">
-          <h1 className="fw-bold">Hello</h1>
-          <p className="lead">
-            This is where you can put a short intro or tagline.
-          </p>
-        </div>
+      <div className="row align-items-center  ">
+        {/* Left side card */}
+       <div className="col-md-6">
+  <div className="card text-start p-5 border-0">
+    {/* Title */}
+    <h1 className="fw-bold text-primary mb-3">
+      PrintX – Fast, Smart & Reliable Printing
+    </h1>
 
-        {/* Right side image */}
-        <div className="col-md-6 text-center">
-          <img
-            src={main}
-            alt="Main"
-            style={{
-              width: "100%",
-              maxHeight: "900px",
-              objectFit: "cover",
-              borderRadius: "10px",
-            }}
-          />
+    {/* Subtitle / Message */}
+    <p className="lead text-muted mb-4">
+      Upload your files and get them printed anytime, anywhere –
+      availability at your fingertips.
+    </p>
+
+    {/* Action Buttons */}
+    <div className="d-flex flex-wrap gap-3 mb-2">
+      <button className="btn btn-primary px-4 py-2 fw-semibold" >
+        Sign Up Now
+      </button>
+    </div>
+
+    <p className="mt-4 text-muted small">
+      ⚡ Fast service • 💰 Affordable rates • 📑 Multiple formats
+      supported
+    </p>
+  </div>
+</div>
+
+
+        {/* Right side card */}
+        <div className="col-md-6">
+          <div className="card text-center p-3 border-0">
+            <img
+              src={main}
+              alt="Main"
+              style={{
+                width: "90%",
+                marginLeft : "auto",
+                marginRight : "auto",
+                maxHeight: "500px",
+                objectFit: "cover",
+                borderRadius: "10px",
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -139,7 +164,58 @@ function Landing() {
             <div
               style={{
                 width: "2px",
-                backgroundColor: "#6c757d", // light gray divider
+                backgroundColor: "white", // light gray divider
+                height: "80%",
+              }}
+            ></div>
+          </div>
+
+          {/* Right Text */}
+          <div className="col-12 col-md-6">
+            <p
+              className="lead mx-auto text-center text-md-start"
+              style={{
+                lineHeight: "1.8",
+                fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+              }}
+            >
+              Our mission is to revolutionize the traditional printing process
+              in Pakistan by creating a smart, fully automated, and AI-enabled
+              printing ecosystem. We aim to eliminate inefficiencies such as
+              long queues, manual handling, and high printing costs by providing
+              users with an accessible digital platform that connects
+              universities, local print shops, and students. Through intelligent
+              recommendations, real-time monitoring, and location-based shop
+              selection, our system ensures affordability, transparency, and
+              convenience while promoting eco-friendly printing practices.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="card border-0 shadow-sm bg-light mt-4 text-dark p-3 p-md-2">
+        <h1
+          className="fw-bold text-uppercase text-center mb-4"
+          style={{
+            fontFamily: "revert-layer",
+            fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+          }}
+        >
+          Why choose us?
+        </h1>
+
+        <div className="row align-items-center">
+          {/* Left Image */}
+          <div className="col-12 col-md-5 text-center mb-3 mb-md-0">
+            <h1>Shop</h1>
+          </div>
+
+          {/* Vertical Divider (only visible on medium+ screens) */}
+          <div className="d-none d-md-flex col-md-1 justify-content-center">
+            <div
+              style={{
+                width: "2px",
+                backgroundColor: "white", // light gray divider
                 height: "80%",
               }}
             ></div>
