@@ -103,14 +103,23 @@ function Landing() {
                 availability at your fingertips.
               </p>
               <div className="d-flex flex-wrap gap-3 mb-2">
-                <button className="btn btn-primary px-4 py-2 fw-semibold">
+                <button className="btn btn-outline-primary px-4 py-2 rounded-5 fw-semibold">
                   Sign Up Now
                 </button>
               </div>
-              <p className="mt-4 text-muted small">
-                ⚡ Fast service • 💰 Affordable rates • 📑 Multiple formats
-                supported
-              </p>
+              <div className="d-flex flex-wrap gap-4 mt-4 text-muted small">
+                <span>
+                  <i className="fas fa-bolt text-warning me-1"></i> Fast service
+                </span>
+                <span>
+                  <i className="fas fa-dollar-sign text-success me-1"></i> Affordable rates
+                </span>
+                <span>
+                  <i className="fas fa-file-alt text-primary me-1"></i> Multiple formats supported
+                </span>
+              </div>
+
+
             </div>
           </div>
 
@@ -132,10 +141,12 @@ function Landing() {
 
 
       {/* Section Mission */}
-      <div className="card border-0 shadow-sm  text-dark p-4 p-md-5" style={{ backgroundImage: "linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%)" }}>
+      <div className="card border-0 shadow-sm  text-dark p-4 p-md-5" style={{
+        background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
+      }}>
 
         <h1
-          className="fw-bold text-uppercase text-center  mb-4"
+          className="fw-bold text-uppercase text-dark text-center  mb-4"
           style={{
             fontFamily: "revert-layer",
             fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
@@ -194,9 +205,9 @@ function Landing() {
       </div>
 
       {/* Section Comparison */}
-      <div className="card border-0 shadow-sm  text-dark p-3 p-md-4" style={{background:"white"}}>
+      <div className="card border-0 shadow-sm  text-dark p-3 p-md-4" style={{ background: "white" }}>
         <h1
-          className="fw-bold text-uppercase text-center text-dark mb-4"
+          className="fw-bold text-uppercase text-center text-dark  mb-4"
           style={{
             fontFamily: "revert-layer",
             fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
@@ -316,8 +327,8 @@ function Landing() {
 
       {/* Section Smart Printing */}
       <div className="card border-0 shadow-sm  text-dark bg-light text-center p-4 p-md-5" style={{
-                background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
-              }}>
+        background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
+      }}>
         {/* Heading */}
         <h2 className="fw-bold mb-3">Smart Printing Made Simple</h2>
         <p className="text-muted mb-5">
@@ -502,6 +513,68 @@ function Landing() {
         </div>
       </div>
 
+
+
+      {/* Section Footer */}
+      <div className="text-light py-5 bg-dark mt-5" >
+        <div className="container">
+          <div className="row g-4">
+
+            {/* Brand */}
+            <div className="col-md-3">
+              <h4 className="fw-bold text-uppercase">
+                Print<span className="text-warning">X</span>
+              </h4>
+              <p className="small">
+                Smart Printing System for universities, students, and shops.
+                Upload, pay, and collect your prints with ease.
+              </p>
+              <div className="d-flex gap-3">
+                <a href="#" className="fs-5"><i className="fab fa-facebook" style={{ color: "#ffffffff" }}></i></a>
+                <a href="#" className="fs-5"><i className="fab fa-linkedin" style={{ color: "#ffffffff" }}></i></a>
+                <a href="#" className="fs-5"><i className="fab fa-instagram" style={{ color: "#ffffffff" }}></i></a>
+                <a href="#" className="fs-5"><i className="fab fa-whatsapp" style={{ color: "#ffffffff" }}></i></a>
+              </div>
+
+            </div>
+
+            {/* Quick Links */}
+            <div className="col-md-3">
+              <h6 className="fw-bold mb-3">Quick Links</h6>
+              <ul className="list-unstyled small">
+                <li><i className="fa fa-headset me-2"></i><a href="#" className="text-decoration-none text-light">Customer Support</a></li>
+                <li><i className="fa fa-circle-question me-2"></i><a href="#" className="text-decoration-none text-light">FAQs</a></li>
+                <li><i className="fa fa-file-contract me-2"></i><a href="#" className="text-decoration-none text-light">Terms & Conditions</a></li>
+                <li><i className="fa fa-shield-halved me-2"></i><a href="#" className="text-decoration-none text-light">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            {/* Service Hours */}
+            <div className="col-md-3">
+              <h6 className="fw-bold mb-3">Service Hours</h6>
+              <p className="small mb-1"><i className="fa fa-clock me-2"></i> Mon–Sat: 8:00 AM – 10:00 PM</p>
+              <p className="small mb-1"><i className="fa fa-clock me-2"></i> Sunday: 10:00am - 11:00pm</p>
+              <p className="small"><i className="fa fa-bolt me-2"></i> Emergency prints on request</p>
+            </div>
+
+            {/* Newsletter */}
+            <div className="col-md-3">
+              <h6 className="fw-bold mb-3">Stay Updated</h6>
+              <p className="small">Get offers, discounts & tips in your inbox.</p>
+              <div className="input-group">
+                <input type="email" className="form-control form-control-sm rounded-start" placeholder="Your email" />
+                <button className="btn btn-primary btn-sm rounded-end">Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Note */}
+          <hr className="border-secondary my-4" />
+          <p className="small text-center mb-0">
+            © {new Date().getFullYear()} PrintX | Smart Printing System. All rights reserved.
+          </p>
+        </div>
+      </div>
 
     </div>
   );
