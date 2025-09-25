@@ -104,25 +104,22 @@ function Landing() {
               </p>
               <div className="d-flex flex-wrap gap-3 mb-2">
                 <button
-                  className="btn btn-outline-primary px-4 py-2 rounded-5 fw-semibold d-flex align-items-center gap-2"
+                  className="btn btn-primary px-4 py-2 rounded-5 fw-semibold d-flex align-items-center gap-2"
                   style={{ position: "relative", overflow: "hidden" }}
                 >
                   Sign Up Now
                   <span
                     className="d-flex align-items-center justify-content-center arrow-circle"
                   >
-                    <i className="fas fa-arrow-right"></i>
-                  </span>
+                    <i className="fa-solid fa-angles-right ms-"></i>                  </span>
 
                   <style>
                     {`
       .arrow-circle {
-        background: black;
+       
         color: white;
-        border-radius: 50%;
         width: 30px;
         height: 30px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         animation: arrowMove 1.5s infinite ease-in-out;
       }
 
@@ -178,7 +175,7 @@ function Landing() {
           className="fw-bold text-uppercase text-dark text-center  mb-4"
           style={{
             fontFamily: "revert-layer",
-            fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+            fontSize: "clamp(1.3rem, 4vw, 2.3rem)",
           }}
         >
           Our Mission
@@ -193,7 +190,7 @@ function Landing() {
                 alt="Mission"
                 className="img-fluid rounded"
                 style={{
-                  maxHeight: "400px",
+                  maxHeight: "300px",
                   objectFit: "cover",
                 }}
               />
@@ -215,7 +212,7 @@ function Landing() {
               <p
                 className="lead mx-auto text-center text-md-start"
                 style={{
-                  lineHeight: "1.8",
+                  lineHeight: "1.5",
                   fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
                 }}
               >
@@ -487,7 +484,7 @@ function Landing() {
                 width: "32px",
                 height: "32px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
-                animation: "moveArrow 2s infinite alternate ease-in-out",
+                animation: "moveArrow 1s infinite alternate ease-in-out",
               }}
             >
               <i className="fa-solid fa-arrow-right"></i>
