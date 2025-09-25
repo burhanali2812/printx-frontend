@@ -103,9 +103,38 @@ function Landing() {
                 availability at your fingertips.
               </p>
               <div className="d-flex flex-wrap gap-3 mb-2">
-                <button className="btn btn-outline-primary px-4 py-2 rounded-5 fw-semibold">
+                <button
+                  className="btn btn-outline-primary px-4 py-2 rounded-5 fw-semibold d-flex align-items-center gap-2"
+                  style={{ position: "relative", overflow: "hidden" }}
+                >
                   Sign Up Now
+                  <span
+                    className="d-flex align-items-center justify-content-center arrow-circle"
+                  >
+                    <i className="fas fa-arrow-right"></i>
+                  </span>
+
+                  <style>
+                    {`
+      .arrow-circle {
+        background: black;
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        animation: arrowMove 1.5s infinite ease-in-out;
+      }
+
+      @keyframes arrowMove {
+        0%   { transform: translateX(0); }
+        50%  { transform: translateX(6px); }
+        100% { transform: translateX(0); }
+      }
+    `}
+                  </style>
                 </button>
+
               </div>
               <div className="d-flex flex-wrap gap-4 mt-4 text-muted small">
                 <span>
@@ -248,10 +277,49 @@ function Landing() {
                 <p className="fw-bold mb-3">
                   Grow your business with smart printing solutions!
                 </p>
+                {/* Shopkeeper button */}
                 <div className="d-flex justify-content-center">
-                  <button className="btn btn-primary rounded-pill px-4">
+                  <button
+                    className="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2 fw-semibold"
+                    style={{
+                      background: "linear-gradient(45deg, #007bff, #00c6ff)",
+                      border: "none",
+                      boxShadow: "0 4px 12px rgba(0, 123, 255, 0.3)",
+                      transition: "all 0.3s ease-in-out"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-3px)";
+                      e.currentTarget.style.boxShadow = "0 6px 16px rgba(0, 123, 255, 0.5)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
+                    }}
+                  >
                     Register as Shopkeeper
+                    <span
+                      className="d-flex justify-content-center align-items-center rounded-circle bg-light text-primary"
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                        animation: "pulse 2s infinite"
+                      }}
+                    >
+                      <i className="fas fa-store"></i>
+                    </span>
                   </button>
+
+                  <style>
+                    {`
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+`}
+                  </style>
+
                 </div>
               </div>
 
@@ -306,10 +374,50 @@ function Landing() {
                 <p className="fw-bold mb-3">
                   Experience affordable, and eco-friendly printing!
                 </p>
+
+                {/* User button */}
                 <div className="d-flex justify-content-center">
-                  <button className="btn btn-primary rounded-pill px-4">
+                  <button
+                    className="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2 fw-semibold"
+                    style={{
+                      background: "linear-gradient(45deg, #007bff, #00c6ff)",
+                      border: "none",
+                      boxShadow: "0 4px 12px rgba(0, 123, 255, 0.3)",
+                      transition: "all 0.3s ease-in-out"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-3px)";
+                      e.currentTarget.style.boxShadow = "0 6px 16px rgba(0, 123, 255, 0.5)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
+                    }}
+                  >
                     Register as User
+                    <span
+                      className="d-flex justify-content-center align-items-center rounded-circle bg-light text-primary"
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                        animation: "pulse 2s infinite"
+                      }}
+                    >
+                      <i className="fas fa-user"></i>
+                    </span>
                   </button>
+
+                  <style>
+                    {`
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+`}
+                  </style>
+
                 </div>
               </div>
 
@@ -370,12 +478,33 @@ function Landing() {
         </div>
 
         {/* Call To Action */}
-        <div className="mt-5">
-
-          <button className="btn btn-dark rounded-pill px-4">
+        <div className="mt-5  d-flex justify-content-center">
+          <button className="btn btn-dark rounded-pill px-4 d-flex align-items-center gap-2">
             Get started Today
+            <span
+              className="d-inline-flex align-items-center justify-content-center bg-white text-dark rounded-circle"
+              style={{
+                width: "32px",
+                height: "32px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
+                animation: "moveArrow 2s infinite alternate ease-in-out",
+              }}
+            >
+              <i className="fa-solid fa-arrow-right"></i>
+            </span>
           </button>
+
+          {/* Inline Keyframes */}
+          <style>
+            {`
+      @keyframes moveArrow {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(10px); }
+      }
+    `}
+          </style>
         </div>
+
       </div>
 
       {/* Section Testimonial */}
@@ -562,7 +691,7 @@ function Landing() {
               <h6 className="fw-bold mb-3">Stay Updated</h6>
               <p className="small">Get offers, discounts & tips in your inbox.</p>
               <div className="input-group">
-                <input type="email" className="form-control form-control-sm rounded-start" placeholder="Your email" />
+                <input type="email" className="form-control form-control-md rounded-start" placeholder="Your email" />
                 <button className="btn btn-primary btn-sm rounded-end">Subscribe</button>
               </div>
             </div>
