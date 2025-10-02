@@ -13,7 +13,7 @@ function Landing() {
       <nav className="navbar navbar-expand-lg" style={{ background: "white" }}>
         <div className="container-fluid d-flex align-items-center">
           {/* Brand Logo (left) */}
-          <a className="navbar-brand d-flex align-items-center" href="#">
+          <a className="navbar-brand d-flex align-items-center" href="/">
             <img
               src={logo}
               alt="Logo"
@@ -46,27 +46,27 @@ function Landing() {
             {/* Links (center only on lg+, left on mobile) */}
             <ul className="navbar-nav mx-lg-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a className="nav-link active" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   Contact us
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   About us
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   FAQ's
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   Privacy Policy
                 </a>
               </li>
@@ -656,10 +656,10 @@ function Landing() {
                 Upload, pay, and collect your prints with ease.
               </p>
               <div className="d-flex gap-3">
-                <a href="#" className="fs-5"><i className="fab fa-facebook" style={{ color: "#ffffffff" }}></i></a>
-                <a href="#" className="fs-5"><i className="fab fa-linkedin" style={{ color: "#ffffffff" }}></i></a>
-                <a href="#" className="fs-5"><i className="fab fa-instagram" style={{ color: "#ffffffff" }}></i></a>
-                <a href="#" className="fs-5"><i className="fab fa-whatsapp" style={{ color: "#ffffffff" }}></i></a>
+                <a href="/" className="fs-5"><i className="fab fa-facebook" style={{ color: "#ffffffff" }}></i></a>
+                <a href="/" className="fs-5"><i className="fab fa-linkedin" style={{ color: "#ffffffff" }}></i></a>
+                <a href="/" className="fs-5"><i className="fab fa-instagram" style={{ color: "#ffffffff" }}></i></a>
+                <a href="/" className="fs-5"><i className="fab fa-whatsapp" style={{ color: "#ffffffff" }}></i></a>
               </div>
 
             </div>
@@ -668,10 +668,10 @@ function Landing() {
             <div className="col-md-3">
               <h6 className="fw-bold mb-3">Quick Links</h6>
               <ul className="list-unstyled small">
-                <li><i className="fa fa-headset me-2"></i><a href="#" className="text-decoration-none text-light">Customer Support</a></li>
-                <li><i className="fa fa-circle-question me-2"></i><a href="#" className="text-decoration-none text-light">FAQs</a></li>
-                <li><i className="fa fa-file-contract me-2"></i><a href="#" className="text-decoration-none text-light">Terms & Conditions</a></li>
-                <li><i className="fa fa-shield-halved me-2"></i><a href="#" className="text-decoration-none text-light">Privacy Policy</a></li>
+                <li><i className="fa fa-headset me-2"></i><a href="/" className="text-decoration-none text-light">Customer Support</a></li>
+                <li><i className="fa fa-circle-question me-2"></i><a href="/" className="text-decoration-none text-light">FAQs</a></li>
+                <li><i className="fa fa-file-contract me-2"></i><a href="/" className="text-decoration-none text-light">Terms & Conditions</a></li>
+                <li><i className="fa fa-shield-halved me-2"></i><a href="/" className="text-decoration-none text-light">Privacy Policy</a></li>
               </ul>
             </div>
 
