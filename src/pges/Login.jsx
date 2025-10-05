@@ -15,10 +15,10 @@ function Login() {
       }}
     >
       <div
-        className="row shadow-lg rounded-4 bg-white col-sm-none overflow-hidden w-100"
+        className="row shadow-lg bg-white col-sm-none overflow-hidden w-100"
         style={{
           maxWidth: "900px",
-          height: "100%", // ✅ Make card full height
+          height: "100%", 
         }}
       >
         {/* LEFT SIDE (Desktop Only) */}
@@ -58,7 +58,7 @@ function Login() {
               >
                 <FaArrowLeft />
               </button>
-              <h2 className="textColor fw-bold m-0">Log In</h2>
+              <h2 className="textColor fw-bold m-0">Log In<i class="fa-solid fa-user-lock ms-2"></i></h2>
             </div>
 
             {/* Subheading */}
@@ -129,10 +129,10 @@ function Login() {
 
             {/* Social Buttons */}
             <div className="d-flex flex-column gap-2 w-100">
-            <button className="btn btn-outline-primary w-100 rounded-4 fw-semibold py-2">
+            <button className="btn  w-100 rounded-4 fw-semibold py-2" style={{border: "1px solid #6719edff", color: "#6719edff", background: "transparent"}}>
               <i className="fa-brands fa-facebook me-2"></i> Continue with Facebook
             </button>
-            <button className="btn btn-outline-danger w-100 rounded-4 fw-semibold py-2">
+            <button className="btn btn-outline-dark w-100 rounded-4 fw-semibold py-2">
               <i className="fa-brands fa-google me-2"></i> Continue with Google
             </button>
           </div>
@@ -140,16 +140,16 @@ function Login() {
             {/* Signup Link */}
             <p className="text-center mt-4 mb-2 text-muted small">
               Don’t have an account?{" "}
-              <a href="#" className="text-primary fw-semibold text-decoration-none">
+              <a href="#" className="textColor fw-semibold text-decoration-none">
                 Sign up
               </a>
             </p>
           </div>
 
-          {/* DESKTOP VIEW (Unchanged) */}
+          {/* DESKTOP VIEW  */}
           <div className="d-none d-md-block p-4 p-md-5">
-            <h3 className="fw-bold text-center mb-4 text-primary">
-              Welcome Back 👋
+            <h3 className="fw-bold text-center mb-4 textColor">
+              Welcome Back 
             </h3>
             <form>
               <div className="mb-3">
@@ -159,7 +159,7 @@ function Login() {
                   placeholder="Email"
                   style={{
                     backgroundColor: "transparent",
-                    border: "1.5px solid #0d6efd",
+                    border: "1.5px solid #6719edff",
                     color: "#0d6efd",
                   }}
                 />
@@ -172,7 +172,7 @@ function Login() {
                   placeholder="Password"
                   style={{
                     backgroundColor: "transparent",
-                    border: "1.5px solid #0d6efd",
+                    border: "1.5px solid #6719edff",
                     color: "#0d6efd",
                   }}
                 />
@@ -181,7 +181,7 @@ function Login() {
               <div className="text-end mb-3">
                 <a
                   href="#"
-                  className="text-primary small fw-semibold text-decoration-none"
+                  className="textColor small fw-semibold text-decoration-none"
                 >
                   Forgot password?
                 </a>
@@ -191,7 +191,7 @@ function Login() {
                 type="submit"
                 className="btn w-100 rounded-4 fw-semibold py-2"
                 style={{
-                  background: "linear-gradient(90deg, #0d6efd 0%, #3b8bff 100%)",
+                  background: "#6719edff",
                   border: "none",
                   color: "white",
                 }}
@@ -206,20 +206,20 @@ function Login() {
               <hr className="flex-grow-1" />
             </div>
 
-            <div className="d-flex flex-column gap-2">
-              <button className="btn w-100 rounded-4 fw-semibold py-2 border border-primary text-primary bg-transparent">
-                Continue with Facebook
-              </button>
-              <button className="btn w-100 rounded-4 fw-semibold py-2 border border-danger text-danger bg-transparent">
-                Continue with Google
-              </button>
-            </div>
+           <div className="d-flex flex-column gap-2 w-100">
+            <button className="btn  w-100 rounded-4 fw-semibold py-2" style={{border: "1px solid #6719edff", color: "#6719edff", background: "transparent"}}>
+              <i className="fa-brands fa-facebook me-2"></i> Continue with Facebook
+            </button>
+            <button className="btn btn-outline-dark w-100 rounded-4 fw-semibold py-2">
+              <i className="fa-brands fa-google me-2"></i> Continue with Google
+            </button>
+          </div>
 
             <p className="text-center mt-4 mb-0 text-muted small">
               Don’t have an account?{" "}
               <a
                 href="#"
-                className="text-primary fw-semibold text-decoration-none"
+                className="textColor fw-semibold text-decoration-none"
               >
                 Sign up
               </a>
