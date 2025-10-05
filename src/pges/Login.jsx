@@ -38,113 +38,181 @@ function Login() {
         {/* RIGHT SIDE (Form Section) */}
         <div className="col-md-6 col-12 p-0 d-flex flex-column justify-content-center">
           {/* MOBILE VIEW */}
-          <div
-            className="d-md-none w-100 min-vh-100 d-flex flex-column justify-content-start align-items-center text-center px-4"
-            style={{
-              background:
-                "linear-gradient(135deg, #dbeafe 0%, #f1f5ff 40%, #ffffff 100%)",
-              paddingBottom: "40px",
-            }}
-          >
-            {/* Header with Back Button & Title */}
-            <div
-              className="d-flex align-items-center justify-content-center w-100 position-relative pt-3 pb-2"
-              style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}
-            >
-              <button
-                className="btn position-absolute start-0 ms-3 textColor border-0"
-                style={{ fontSize: "1.2rem" }}
-                onClick={() => window.history.back()}
-              >
-                <FaArrowLeft />
-              </button>
-              <h2 className="textColor fw-bold m-0">Log In<i class="fa-solid fa-user-lock ms-2"></i></h2>
-            </div>
+       <div
+  className="d-md-none w-100 min-vh-100 d-flex flex-column justify-content-start align-items-center text-center px-4 overflow-hidden"
+  style={{
+    background: "linear-gradient(135deg, #e9f0ff 0%, #f6f9ff 50%, #ffffff 100%)",
+  }}
+>
+  {/* Header */}
+  <div
+    className="d-flex align-items-center justify-content-center w-100 position-relative pt-3 pb-2"
+    style={{ borderBottom: "1px solid rgba(0,0,0,0.05)" }}
+  >
+    <button
+      className="btn position-absolute start-0 ms-3 textColor border-0"
+      style={{ fontSize: "1.2rem" }}
+      onClick={() => window.history.back()}
+    >
+      <i className="fa-solid fa-arrow-left"></i>
+    </button>
+    <h2 className="textColor fw-bold m-0">
+      Log In <i className="fa-solid fa-user-lock ms-2"></i>
+    </h2>
+  </div>
 
-            {/* Subheading */}
-            <img src={printxLogo} style={{width:"auto", height:"60px" , marginTop: "30px"}}/>
-            <p className="text-muted small mb-3 mt-3">
-             Log in securely and continue your journey with PrintX.
-            </p>
+  {/* Logo */}
+  <img
+    src={printxLogo}
+    alt="PrintX Logo"
+    style={{
+      width: "auto",
+      height: "75px",
+      marginTop: "50px",
+    }}
+  />
 
-            {/* Form */}
-            <form className="w-100" style={{ maxWidth: "400px" }}>
-              <div className="mb-3">
-                <input
-                  type="email"
-                  className="form-control rounded-4 py-2"
-                  placeholder="Email"
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "1.5px solid #6719edff",
-                    color: "#0d6efd",
-                  }}
-                />
-              </div>
+  {/* Welcome Text */}
+  <h1 className=" text-dark mt-3 mb-1">
+    Welcome to Print<span className="text-warning fw-bold">X</span>
+  </h1>
 
-              <div className="mb-2">
-                <input
-                  type="password"
-                  className="form-control rounded-4 py-2"
-                  placeholder="Password"
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "1.5px solid #6719edff",
-                    color: "#0d6efd",
-                  }}
-                />
-              </div>
+  <p className="text-muted small mb-3 px-2">
+    Enter your login credentials to access your account and manage your prints effortlessly.
+  </p>
 
-              <div className="text-end mb-3">
-                <a
-                  href="#"
-                  className=" small fw-semibold text-decoration-none textColor"
-                >
-                  Forgot password?
-                </a>
-              </div>
+  {/* Login Form */}
+  <form className="w-100" style={{ maxWidth: "380px",  marginTop: "50px" }}>
+  {/* Email Field */}
+<div className="mb-3 text-start">
 
-              <button
-                type="submit"
-                className="btn w-100 rounded-4 fw-semibold py-2"
-                style={{
-                  background: " #6719edff",
-                  border: "none",
-                  color: "white",
-                }}
-              >
-                Sign In
-              </button>
-            </form>
+  <div className="input-group">
+    <span
+      className="input-group-text bg-transparent border-1 rounded-start-4"
+      style={{
+        border: "1.5px solid #6719ed",
+        borderRight: "none",
+        color: "#6719ed",
+      }}
+    >
+      <i className="fa-solid fa-envelope"></i>
+    </span>
+    <input
+      type="email"
+      className="form-control rounded-end-4 py-2"
+      placeholder="Enter your email"
+      style={{
+        backgroundColor: "transparent",
+        border: "1.5px solid #6719ed",
+        borderLeft: "none",
+        color: "#0d6efd",
+      }}
+    />
+  </div>
+</div>
 
-            {/* Divider */}
-            <div
-              className="d-flex align-items-center my-3 w-100"
-              style={{ maxWidth: "400px" }}
-            >
-              <hr className="flex-grow-1" />
-              <span className="mx-2 text-muted small">Or</span>
-              <hr className="flex-grow-1" />
-            </div>
+{/* Password Field */}
+<div className="mb-2 text-start">
+  <div className="input-group">
+    <span
+      className="input-group-text bg-transparent border-1 rounded-start-4"
+      style={{
+        border: "1.5px solid #6719ed",
+        borderRight: "none",
+        color: "#6719ed",
+      }}
+    >
+      <i className="fa-solid fa-lock"></i>
+    </span>
+    <input
+      type="password"
+      className="form-control rounded-end-4 py-2"
+      placeholder="Enter your password"
+      style={{
+        backgroundColor: "transparent",
+        border: "1.5px solid #6719ed",
+        borderLeft: "none",
+        color: "#0d6efd",
+      }}
+    />
+  </div>
+</div>
 
-            {/* Social Buttons */}
-            <div className="d-flex flex-column gap-2 w-100">
-            <button className="btn  w-100 rounded-4 fw-semibold py-2" style={{border: "1px solid #6719edff", color: "#6719edff", background: "transparent"}}>
-              <i className="fa-brands fa-facebook me-2"></i> Continue with Facebook
-            </button>
-            <button className="btn btn-outline-dark w-100 rounded-4 fw-semibold py-2">
-              <i className="fa-brands fa-google me-2"></i> Continue with Google
-            </button>
-          </div>
 
-            {/* Signup Link */}
-            <p className="text-center mt-4 mb-2 text-muted small">
-              Don’t have an account?{" "}
-              <a href="#" className="textColor fw-semibold text-decoration-none">
-                Sign up
-              </a>
-            </p>
-          </div>
+    <div className="text-end mb-3">
+      <a
+        href="/"
+        className="small fw-semibold text-decoration-none textColor"
+      >
+        Forgot password?
+      </a>
+    </div>
+
+    <button
+      type="submit"
+      className="btn w-100 rounded-4 fw-semibold py-2 shadow-sm"
+      style={{
+        background: "#6719ed",
+        border: "none",
+        color: "white",
+        letterSpacing: "0.5px",
+      }}
+    >
+      <i className="fa-solid fa-right-to-bracket me-2"></i> Sign In
+    </button>
+  </form>
+
+  {/* Divider */}
+  <div
+    className="d-flex align-items-center my-3 w-100"
+    style={{ maxWidth: "380px" }}
+  >
+    <hr className="flex-grow-1" />
+    <span className="mx-2 text-muted small">Or continue with</span>
+    <hr className="flex-grow-1" />
+  </div>
+
+  {/* Social Buttons */}
+  <div
+    className="d-flex flex-column gap-2 w-100"
+    style={{ maxWidth: "380px" }}
+  >
+    <button
+      className="btn w-100 rounded-4 fw-semibold py-2"
+      style={{
+        border: "1px solid #6719ed",
+        color: "#6719ed",
+        background: "transparent",
+      }}
+    >
+      <i className="fa-brands fa-facebook-f me-2"></i> Continue with Facebook
+    </button>
+
+    <button
+      className="btn w-100 rounded-4 fw-semibold py-2"
+      style={{
+        border: "1px solid #db4437",
+        color: "#db4437",
+        background: "transparent",
+      }}
+    >
+      <i className="fa-brands fa-google me-2"></i> Continue with Google
+    </button>
+  </div>
+
+  {/* Signup Link */}
+  <p className="text-center mt-4 mb-2 text-muted small">
+    Don’t have an account?{" "}
+    <a
+      href="/"
+      className="textColor fw-semibold text-decoration-none"
+      style={{ color: "#6719ed" }}
+    >
+      Create one now
+    </a>
+  </p>
+</div>
+
 
           {/* DESKTOP VIEW  */}
           <div className="d-none d-md-block p-4 p-md-5">
@@ -180,7 +248,7 @@ function Login() {
 
               <div className="text-end mb-3">
                 <a
-                  href="#"
+                  href="/"
                   className="textColor small fw-semibold text-decoration-none"
                 >
                   Forgot password?
@@ -218,7 +286,7 @@ function Login() {
             <p className="text-center mt-4 mb-0 text-muted small">
               Don’t have an account?{" "}
               <a
-                href="#"
+                href="/"
                 className="textColor fw-semibold text-decoration-none"
               >
                 Sign up
