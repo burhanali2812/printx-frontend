@@ -8,7 +8,7 @@ function App() {
   return (
    <>
     {/* {isMobile ? <Login /> : <Landing />} */}
-    <Splash />
+    <Login />
    </>
   );
 }
