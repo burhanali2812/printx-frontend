@@ -2,9 +2,10 @@ import React from "react";
 import loginLogo from "../images/login.png";
 import printxLogo from "../images/logo3.png"
 import "../style/login.css"
-import { FaArrowLeft } from "react-icons/fa"; // back icon
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <div
       className=" min-vh-100 d-flex justify-content-center align-items-center"
@@ -52,7 +53,7 @@ function Login() {
     <button
       className="btn position-absolute start-0 ms-3 textColor border-0"
       style={{ fontSize: "1.2rem" }}
-      onClick={() => window.history.back()}
+      onClick={() => navigate("/")}
     >
       <i className="fa-solid fa-arrow-left"></i>
     </button>
@@ -65,16 +66,18 @@ function Login() {
   <img
     src={printxLogo}
     alt="PrintX Logo"
+    className="animate__animated animate__fadeInDown"
     style={{
       width: "auto",
-      height: "75px",
-      marginTop: "50px",
+      height: "70px",
+      marginTop: "30px",
     }}
   />
 
   {/* Welcome Text */}
-  <h1 className=" text-dark mt-3 mb-1">
-    Welcome to Print<span className="text-warning fw-bold">X</span>
+  <h1 className=" text-dark mt-3 mb-1 animate__animated animate__fadeInLeft">
+    
+    Welcome to Print<span className="text-warning fw-bold ">X</span>
   </h1>
 
   <p className="text-muted small mb-3 px-2">
@@ -82,13 +85,13 @@ function Login() {
   </p>
 
   {/* Login Form */}
-  <form className="w-100" style={{ maxWidth: "380px",  marginTop: "50px" }}>
+  <form className="w-100" style={{ maxWidth: "380px",  marginTop: "30px" }}>
   {/* Email Field */}
 <div className="mb-3 text-start">
 
   <div className="input-group">
     <span
-      className="input-group-text bg-transparent border-1 rounded-start-4"
+      className="input-group-text bg-transparent rounded-start-4"
       style={{
         border: "1.5px solid #6719ed",
         borderRight: "none",
@@ -115,7 +118,7 @@ function Login() {
 <div className="mb-2 text-start">
   <div className="input-group">
     <span
-      className="input-group-text bg-transparent border-1 rounded-start-4"
+      className="input-group-text bg-transparent  rounded-start-4"
       style={{
         border: "1.5px solid #6719ed",
         borderRight: "none",
@@ -135,6 +138,33 @@ function Login() {
         color: "#0d6efd",
       }}
     />
+  </div>
+</div>
+<div className="mb-3 text-start">
+  <div className="input-group">
+    <span
+      className="input-group-text bg-transparent  rounded-start-4"
+      style={{
+        border: "1.5px solid #6719ed",
+        borderRight: "none",
+        color: "#6719ed",
+      }}
+    >
+      <i className="fa-solid fa-user-tag"></i>
+    </span>
+    <select
+      className="form-select rounded-end-4 py-2"
+      style={{
+        backgroundColor: "transparent",
+        border: "1.5px solid #6719ed",
+        borderLeft: "none",
+        color: "#6719ed",
+      }}
+    >
+      <option value="">Select Role</option>
+      <option value="1">User</option>
+      <option value="2">Shopkeeper</option>
+    </select>
   </div>
 </div>
 
@@ -189,10 +219,9 @@ function Login() {
     </button>
 
     <button
-      className="btn w-100 rounded-4 fw-semibold py-2"
+      className="btn w-100 btn-outline-warning rounded-4 fw-semibold py-2"
       style={{
-        border: "1px solid #db4437",
-        color: "#db4437",
+      
         background: "transparent",
       }}
     >

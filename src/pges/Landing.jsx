@@ -3,8 +3,9 @@ import logo from "../images/logo3.png";
 import main from "../images/main.png";
 import mission from "../images/mission.png";
 import "../style/landing.css";
-
+import { useNavigate } from "react-router-dom";
 function Landing() {
+  const navigate = useNavigate();
 
 
   return (
@@ -80,6 +81,7 @@ function Landing() {
               <button
                 className="btn btn-outline-primary rounded-pill px-4"
                 style={{ width: "137px" }}
+                onClick={() => navigate("/login")}
               >
                 <i className="fa-solid fa-right-to-bracket me-1"></i> Login
               </button>
