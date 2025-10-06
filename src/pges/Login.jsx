@@ -10,9 +10,11 @@ function Login() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("Select Role");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const payLoad = {
       email,
@@ -27,16 +29,19 @@ function Login() {
         payLoad
       );
       if (response.data.success) {
+        setLoading(false);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", JSON.stringify(response.data.userData));
-        setEmail("")
-        setPassword("")
-        setRole("Select Role")
+        setEmail("");
+        setPassword("");
+        setRole("Select Role");
         alert(response.data.message);
       } else {
+        setLoading(false);
         alert("Login failed" || response.data.message);
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
       alert("An error occurred during login. Please try again.");
     }
@@ -249,8 +254,22 @@ function Login() {
                   color: "white",
                   letterSpacing: "0.5px",
                 }}
+                disabled={loading}
               >
-                <i className="fa-solid fa-right-to-bracket me-2"></i> Sign In
+                {loading ? (
+                  <>
+                    Verifying you...
+                    <div
+                      className="spinner-border spinner-border-sm text-light ms-2"
+                      role="status"
+                    ></div>
+                  </>
+                ) : (
+                  <>
+                    <i className="fa-solid fa-right-to-bracket me-2"></i> Sign
+                    In
+                  </>
+                )}
               </button>
             </form>
 
@@ -433,8 +452,22 @@ function Login() {
                   border: "none",
                   color: "white",
                 }}
+                disabled={loading}
               >
-                Sign In
+                {loading ? (
+                  <>
+                    Verifying you...
+                    <div
+                      className="spinner-border spinner-border-sm text-light ms-2"
+                      role="status"
+                    ></div>
+                  </>
+                ) : (
+                  <>
+                    <i className="fa-solid fa-right-to-bracket me-2"></i> Sign
+                    In
+                  </>
+                )}
               </button>
             </form>
 
