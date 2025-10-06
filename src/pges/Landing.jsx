@@ -75,7 +75,9 @@ function Landing() {
 
             {/* Right buttons (right on lg+, left on mobile) */}
             <div className="d-flex mt-3 mt-lg-0 ms-lg-0">
-              <button className="btn btn-outline-dark me-3 rounded-pill px-4">
+              <button
+               className="btn btn-outline-dark me-3 rounded-pill px-4"
+               onClick={() => navigate("/signup")}>
                 <i className="fa-solid fa-user-plus me-1"></i> Sign up
               </button>
               <button
@@ -108,6 +110,7 @@ function Landing() {
                 <button
                   className="btn btn-primary px-4 py-2 rounded-5 fw-semibold d-flex align-items-center gap-2"
                   style={{ position: "relative", overflow: "hidden" }}
+                  onClick={() => navigate("/signup")}
                 >
                   Sign Up Now
                   <span

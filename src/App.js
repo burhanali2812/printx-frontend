@@ -5,13 +5,16 @@ import './App.css';
 import Login from './pges/Login';
 import {Routes, Route} from 'react-router-dom';
  import Splash from './pges/Splash';
+import SignUp from './pges/SignUp';
 function App() {
   return (
    <>
     {/* {isMobile ? <Login /> : <Landing />} */}
     <Routes>
       <Route path="/" element={isMobile ? <Splash /> : <Landing />} />
+      <Route path='/splash' element={<Splash />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
    </>
   );
