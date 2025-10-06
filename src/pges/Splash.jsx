@@ -40,7 +40,7 @@ function Splash() {
           <button
             className="btn  rounded-4 w-100 mt-2"
             style={{ border: "1px solid #6719edff", color : "#6719edff", height: "43px" }}
-            onClick={() => setRegisterModal(true)}
+            onClick={() => navigate("/signup")}
           >
             Get Started<i class="fa-solid fa-user-plus ms-2"></i>
           </button>
