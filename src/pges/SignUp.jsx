@@ -6,6 +6,7 @@ import printxLogo from "../images/logo3.png";
 import "../style/login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import {useLocation} from 'react-router-dom';
 function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [name, setName] = useState("");
@@ -15,6 +16,8 @@ function SignUp() {
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    const mobRole= location.state?.role || "Select Role";
 
     const handleSignUp = async (e) => {
         setLoading(true);
