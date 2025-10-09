@@ -298,7 +298,7 @@ function Landing() {
                       e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
                     }}
                   >
-                    Register as Shopkeeper
+                    Register as Shopkee
                     <span
                       className="d-flex justify-content-center align-items-center rounded-circle bg-light text-primary"
                       style={{
