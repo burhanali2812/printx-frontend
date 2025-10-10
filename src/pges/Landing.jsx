@@ -297,8 +297,10 @@ function Landing() {
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
                     }}
+                   onClick={() => navigate("/signup", { state: { role: "Shopkeeper" } })}
+
                   >
-                    Register as Shopkee
+                    Register as Shopkeeper
                     <span
                       className="d-flex justify-content-center align-items-center rounded-circle bg-light text-primary"
                       style={{
@@ -395,6 +397,7 @@ function Landing() {
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
                     }}
+                    onClick={() => navigate("/signup", { state: { role: "User" } })}
                   >
                     Register as User
                     <span

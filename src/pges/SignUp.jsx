@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import loginLogo from "../images/signup.png";
 import googleLogo from "../images/google.png";
 import facebookLogo from "../images/fb.png";
@@ -17,14 +17,20 @@ function SignUp() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
-    const mobRole= location.state?.role || "Select Role";
+    const webMobRole= location.state?.role || "Select Role";
+
+    useEffect(()=>{
+        setRole(webMobRole)
+    },[webMobRole])
+    console.log("role from mob", role);
+    
 
     const handleSignUp = async (e) => {
         setLoading(true);
         e.preventDefault();
         if (password !== confirmPassword) {
             setLoading(false);
-            return alert("Passwords do not match");
+            return alert("Password does not match");
         }
         const payLoad = {
             name,
@@ -39,10 +45,11 @@ function SignUp() {
                 `https://printx-backend-delta.vercel.app/printx/${finalRole}/register`,
                 payLoad
             );
-            if (response.data.success) {
+            if (response.data.success ) {
                 setLoading(false);
                 setEmail("");
                 setPassword("");
+                setConfirmPassword("")
                 setRole("Select Role");
                 alert(response.data.message);
                 navigate("/login");
@@ -246,7 +253,7 @@ function SignUp() {
                                         className="form-control rounded-end-4 py-2"
                                         value={confirmPassword}
                                         onChange={(e) => setConfirmPassword(e.target.value)}
-                                        placeholder="Reenter your password"
+                                        placeholder="Confirm your password"
                                         style={{
                                             backgroundColor: "transparent",
                                             border: "1.5px solid #6719ed",
@@ -387,6 +394,7 @@ function SignUp() {
                                             borderLeft: "none",
                                             color: "#6719ed",
                                         }}
+                                        disabled={webMobRole !== "Select Role"}
                                     >
                                         <option value="">{role}</option>
                                         <option value="User" onClick={() => setRole("User")}>
@@ -502,7 +510,7 @@ function SignUp() {
                                         className="form-control rounded-end-4 py-2"
                                         value={confirmPassword}
                                         onChange={(e) => setConfirmPassword(e.target.value)}
-                                        placeholder="Reenter your password"
+                                        placeholder="Confirm your password"
                                         style={{
                                             backgroundColor: "transparent",
                                             border: "1.5px solid #6719ed",

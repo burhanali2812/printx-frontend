@@ -10,14 +10,48 @@ import axios from "axios";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("Select Role");
+    const [role, setRole] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState ({
+        emailError : "",
+        roleError : "",
+        passwordError: ""   ,
+     })
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
+        let hasError = false;
         setLoading(true);
         e.preventDefault();
+          if(role === ""){
+            setError((prev)=>({ ...prev , roleError : "Select a role"}))
+            setLoading(false)
+            hasError = true;
+            return;
+        }
+        else{
+            setError((prev)=>({ ...prev , roleError : ""}))
+        }
+        if(email === ""){
+            setError((prev)=>({ ...prev , emailError : "Email cannot be Empty"}))
+            setLoading(false)
+            hasError = true;
+            return;
+        }
+        else{
+           setError((prev)=>({ ...prev , emailError : ""})) 
+        }
+      
+        if(password === ""){
+            setError((prev)=>({ ...prev , passwordError : "Password cannot be Empty"}))
+            setLoading(false)
+            hasError = true
+            return;
+        }
+        else{
+            setError((prev)=>({ ...prev , passwordError : ""}))
+        }
         const payLoad = {
             email,
             password,
@@ -156,11 +190,16 @@ function Login() {
                                             color: "#6719ed",
                                         }}
                                     >
-                                        <option value="">{role}</option>
+                                        <option value="">Select Role</option>
                                         <option value="User">User</option>
                                         <option value="Shopkeeper">Shopkeeper</option>
                                     </select>
                                 </div>
+                                 {
+                                error.roleError && (
+                                     <p className="text-danger text-lead ms-2">{error.roleError}</p>
+                                )
+                               }
                             </div>
                             {/* Email Field */}
                             <div className="mb-2 text-start">
@@ -189,6 +228,11 @@ function Login() {
                                         }}
                                     />
                                 </div>
+                               {
+                                error.emailError && (
+                                     <p className="text-danger text-lead ms-2">{error.emailError}</p>
+                                )
+                               }
                             </div>
 
                             {/* Password Field */}
@@ -218,6 +262,11 @@ function Login() {
                                         }}
                                     />
                                 </div>
+                                 {
+                                error.passwordError && (
+                                     <p className="text-danger text-lead ms-2">{error.passwordError}</p>
+                                )
+                               }
                             </div>
 
                             <div className="d-flex justify-content-between align-items-center mb-3 mt-2 mx-1">
@@ -225,12 +274,12 @@ function Login() {
                                 <div className="d-flex align-items-center">
                                     <input
                                         type="checkbox"
-                                        id="showPassword"
+                                        id="showPasswordmob"
                                         className="me-2"
                                         onClick={() => setShowPassword(!showPassword)}
                                     />
                                     <label
-                                        htmlFor="showPassword"
+                                        htmlFor="showPasswordmob"
                                         className="textColor small fw-semibold text-decoration-none m-0"
                                     >
                                         Show Password
@@ -435,12 +484,12 @@ function Login() {
                                 <div className="d-flex align-items-center">
                                     <input
                                         type="checkbox"
-                                        id="showPassword"
+                                        id="showPasswordweb"
                                         className="me-2"
                                         onClick={() => setShowPassword(!showPassword)}
                                     />
                                     <label
-                                        htmlFor="showPassword"
+                                        htmlFor="showPasswordweb"
                                         className="textColor small fw-semibold text-decoration-none m-0"
                                     >
                                         Show Password
