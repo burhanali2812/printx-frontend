@@ -197,7 +197,7 @@ function Login() {
                                 </div>
                                  {
                                 error.roleError && (
-                                     <p className="text-danger text-lead ms-2">{error.roleError}</p>
+                                     <p className="text-danger text-lead ms-2"><i class="fa-solid fa-circle-exclamation me-2"></i>{error.roleError}</p>
                                 )
                                }
                             </div>
@@ -230,7 +230,7 @@ function Login() {
                                 </div>
                                {
                                 error.emailError && (
-                                     <p className="text-danger text-lead ms-2">{error.emailError}</p>
+                                     <p className="text-danger text-lead ms-2"><i class="fa-solid fa-circle-exclamation me-2"></i>{error.emailError}</p>
                                 )
                                }
                             </div>
@@ -264,7 +264,7 @@ function Login() {
                                 </div>
                                  {
                                 error.passwordError && (
-                                     <p className="text-danger text-lead ms-2">{error.passwordError}</p>
+                                     <p className="text-danger text-lead ms-2"><i class="fa-solid fa-circle-exclamation me-2"></i>{error.passwordError}</p>
                                 )
                                }
                             </div>
