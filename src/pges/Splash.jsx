@@ -88,7 +88,7 @@ function Splash() {
                   }}
                   onClick={() => {
                     setRegisterModal(false);
-                    navigate("/signup", { state: { role: "Shopkeeper" } });
+                    navigate("/signup", { state: { mobRole: "Shopkeeper" } });
                   }}
                 >
                   <div className="d-flex align-items-center mb-2">
@@ -129,7 +129,7 @@ function Splash() {
                   }}
                   onClick={() => {
                     setRegisterModal(false);
-                    navigate("/signup", { state: { role: "User" } });
+                    navigate("/signup", { state: { mobRole: "User" } });
                   }}
                 >
                   <div className="d-flex align-items-center mb-2">

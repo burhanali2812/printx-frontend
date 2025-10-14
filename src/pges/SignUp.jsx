@@ -12,24 +12,86 @@ function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("Select Role");
+  const [role, setRole] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const webMobRole = location.state?.role || "Select Role";
+  const mobRole = location.state?.mobRole || "";
+
+  const [error, setError] = useState({
+    emailError: "",
+    roleError: "",
+    passwordError: "",
+    nameError: "",
+    confirmError: "",
+  });
 
   useEffect(() => {
-    setRole(webMobRole);
-  }, [webMobRole]);
+      setRole(mobRole)
+
+  }, [mobRole]);
   console.log("role from mob", role);
 
   const handleSignUp = async (e) => {
     setLoading(true);
     e.preventDefault();
-    if (password !== confirmPassword) {
+    let hasError = false;
+    if (role === "Select Role") {
+      setError((prev) => ({ ...prev, roleError: "Select a role" }));
       setLoading(false);
-      return alert("Password does not match");
+      hasError = true;
+      return;
+    } else {
+      setError((prev) => ({ ...prev, roleError: "" }));
+    }
+    if (name === "") {
+      setError((prev) => ({ ...prev, nameError: "Name cannot be empty" }));
+      setLoading(false);
+      hasError = true;
+      return;
+    } else {
+      setError((prev) => ({ ...prev, nameError: "" }));
+    }
+    if (email === "") {
+      setError((prev) => ({ ...prev, emailError: "Email cannot be Empty" }));
+      setLoading(false);
+      hasError = true;
+      return;
+    } else {
+      setError((prev) => ({ ...prev, emailError: "" }));
+    }
+    if (password === "") {
+      setError((prev) => ({
+        ...prev,
+        passwordError: "Password cannot be Empty",
+      }));
+      setLoading(false);
+      hasError = true;
+      return;
+    } else if (password.length < 9) {
+      setError((prev) => ({
+        ...prev,
+        passwordError: "Password must be of 8 characters",
+      }));
+      setLoading(false);
+      hasError = true;
+      return;
+    } else {
+      setError((prev) => ({ ...prev, passwordError: "" }));
+    }
+    if (password !== confirmPassword) {
+       setError((prev) => ({
+        ...prev,
+        confirmError: "Password does not match",
+      }));
+      setLoading(false);
+      hasError = true;
+      return;
+
+    }
+     else {
+      setError((prev) => ({ ...prev, confirmError: "" }));
     }
     const payLoad = {
       name,
@@ -101,7 +163,7 @@ function SignUp() {
                 "linear-gradient(135deg, #e9f0ff 0%, #f6f9ff 50%, #ffffff 100%)",
             }}
           >
-             {/* Header */}
+            {/* Header */}
             <div className="d-md-none d-flex align-items-center justify-content-center w-100 position-relative pt-3 pb-2">
               <button
                 className="btn position-absolute start-0 ms-3 textColor border-0"
@@ -115,8 +177,6 @@ function SignUp() {
               </h5>
             </div>
             <div className="d-md-none w-100 min-vh-100 d-flex flex-column justify-content-center align-items-center text-center px-4 overflow-hidden">
-             
-
               {/* Logo */}
               <img
                 src={printxLogo}
@@ -170,6 +230,12 @@ function SignUp() {
                       }}
                     />
                   </div>
+                   {error.nameError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.nameError}
+                    </p>
+                  )}
                 </div>
                 {/* Email Field */}
                 <div className="mb-2 text-start">
@@ -198,6 +264,12 @@ function SignUp() {
                       }}
                     />
                   </div>
+                  {error.emailError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.emailError}
+                    </p>
+                  )}
                 </div>
 
                 {/* Password Field */}
@@ -227,6 +299,12 @@ function SignUp() {
                       }}
                     />
                   </div>
+                  {error.passwordError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.passwordError}
+                    </p>
+                  )}
                 </div>
 
                 {/* Confirm Password Field */}
@@ -256,6 +334,12 @@ function SignUp() {
                       }}
                     />
                   </div>
+                  {error.confirmError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.confirmError}
+                    </p>
+                  )}
                 </div>
 
                 <div className="d-flex justify-content-between align-items-center mb-3 mt-2 mx-1">
@@ -399,20 +483,21 @@ function SignUp() {
                       borderLeft: "none",
                       color: "#6719ed",
                     }}
-                    disabled={webMobRole !== "Select Role"}
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    
                   >
-                    <option value="">{role}</option>
-                    <option value="User" onClick={() => setRole("User")}>
-                      User
-                    </option>
-                    <option
-                      value="Shopkeeper"
-                      onClick={() => setRole("Shopkeeper")}
-                    >
-                      Shopkeeper
-                    </option>
+                    <option value="">Select Role</option>
+                    <option value="User">User</option>
+                    <option value="Shopkeeper">Shopkeeper</option>
                   </select>
                 </div>
+                  {error.roleError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.roleError}
+                    </p>
+                  )}
               </div>
               {/* Name Field */}
               <div className="mb-2 text-start">
@@ -441,6 +526,12 @@ function SignUp() {
                     }}
                   />
                 </div>
+                  {error.nameError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.nameError}
+                    </p>
+                  )}
               </div>
               {/* Email Field */}
               <div className="mb-2 text-start">
@@ -469,6 +560,12 @@ function SignUp() {
                     }}
                   />
                 </div>
+                  {error.emailError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.emailError}
+                    </p>
+                  )}
               </div>
 
               {/* Password Field */}
@@ -498,6 +595,12 @@ function SignUp() {
                     }}
                   />
                 </div>
+                  {error.passwordError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.passwordError}
+                    </p>
+                  )}
               </div>
               {/* Confirm Password Field */}
               <div className="mb-1 text-start">
@@ -526,6 +629,12 @@ function SignUp() {
                     }}
                   />
                 </div>
+                  {error.confirmError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.confirmError}
+                    </p>
+                  )}
               </div>
 
               <div className="d-flex justify-content-between align-items-center mb-3 mt-2 mx-1">

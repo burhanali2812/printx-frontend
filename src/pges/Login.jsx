@@ -419,19 +419,26 @@ function Login() {
                       borderLeft: "none",
                       color: "#6719ed",
                     }}
+                    value={role}
+                    onChange={(e)=>setRole(e.target.value)}
                   >
-                    <option value="">{role}</option>
-                    <option value="User" onClick={() => setRole("User")}>
+                    <option value="">Select Role</option>
+                    <option value="User">
                       User
                     </option>
                     <option
                       value="Shopkeeper"
-                      onClick={() => setRole("Shopkeeper")}
                     >
                       Shopkeeper
                     </option>
                   </select>
                 </div>
+                 {error.roleError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.roleError}
+                    </p>
+                  )}
               </div>
               {/* Email Field */}
               <div className="mb-2 text-start">
@@ -460,6 +467,12 @@ function Login() {
                     }}
                   />
                 </div>
+                     {error.emailError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.emailError}
+                    </p>
+                  )}
               </div>
 
               {/* Password Field */}
@@ -489,6 +502,12 @@ function Login() {
                     }}
                   />
                 </div>
+                     {error.passwordError && (
+                    <p className="text-danger text-lead ms-2">
+                      <i class="fa-solid fa-circle-exclamation me-2"></i>
+                      {error.passwordError}
+                    </p>
+                  )}
               </div>
 
               <div className="d-flex justify-content-between align-items-center mb-3 mt-2 mx-1">
