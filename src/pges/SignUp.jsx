@@ -14,10 +14,12 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [disableRole, setDisableRole] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const mobRole = location.state?.mobRole || "";
+
 
   const [error, setError] = useState({
     emailError: "",
@@ -26,12 +28,20 @@ function SignUp() {
     nameError: "",
     confirmError: "",
   });
-
-  useEffect(() => {
+useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const webMobRole = params.get("role");
+    if (webMobRole) {
+      
+      setRole(webMobRole);
+      console.log("Role from URL:", webMobRole);
+      setDisableRole(true)
+    }
+    else{
       setRole(mobRole)
+    }
+  }, []);
 
-  }, [mobRole]);
-  console.log("role from mob", role);
 
   const handleSignUp = async (e) => {
     setLoading(true);
@@ -472,6 +482,7 @@ function SignUp() {
                       borderRight: "none",
                       color: "#6719ed",
                     }}
+                    
                   >
                     <i className="fa-solid fa-user-tag"></i>
                   </span>
@@ -483,6 +494,7 @@ function SignUp() {
                       borderLeft: "none",
                       color: "#6719ed",
                     }}
+                    disabled ={disableRole}
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
                     
