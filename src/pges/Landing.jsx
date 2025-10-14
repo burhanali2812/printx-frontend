@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 function Landing() {
   const navigate = useNavigate();
 
-
   return (
     <div style={{ width: "100%", margin: "0 auto", overflowX: "hidden" }}>
       {/* Navbar */}
@@ -45,44 +44,87 @@ function Landing() {
             id="navbarSupportedContent"
           >
             {/* Links (center only on lg+, left on mobile) */}
-            <ul className="navbar-nav mx-lg-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" href="/">
-                  Home
-                </a>
+            <ul className="navbar-nav  mx-lg-auto mb-2 mb-lg-0">
+              <li
+                className="nav-item textColor me-3"
+                onClick={() => navigate("/login")}
+                style={{
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "black")}
+                onMouseLeave={(e) => (e.target.style.color = "#6719edff")}
+              >
+                Home
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Contact us
-                </a>
+              <li
+                className="nav-item textColor me-3"
+                onClick={() => navigate("/login")}
+                style={{
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "black")}
+                onMouseLeave={(e) => (e.target.style.color = "#6719edff")}
+              >
+                Contact us
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  About us
-                </a>
+              <li
+                className="nav-item textColor me-3"
+                onClick={() => navigate("/login")}
+                style={{
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "black")}
+                onMouseLeave={(e) => (e.target.style.color = "#6719edff")}
+              >
+                About us
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  FAQ's
-                </a>
+              <li
+                className="nav-item textColor me-3"
+                onClick={() => navigate("/login")}
+                style={{
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "black")}
+                onMouseLeave={(e) => (e.target.style.color = "#6719edff")}
+              >
+                FAQ's
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Privacy Policy
-                </a>
+              <li
+                className="nav-item textColor me-3"
+                onClick={() => navigate("/login")}
+                style={{
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "black")}
+                onMouseLeave={(e) => (e.target.style.color = "#6719edff")}
+              >
+                Privacy Policy
               </li>
             </ul>
 
             {/* Right buttons (right on lg+, left on mobile) */}
             <div className="d-flex mt-3 mt-lg-0 ms-lg-0">
               <button
-               className="btn btn-outline-dark me-3 rounded-pill px-4"
-               onClick={() => navigate("/signup")}>
+                className="btn me-3 rounded-pill px-4"
+                onClick={() => navigate("/signup")}
+                style={{
+                  border: "1px solid #6719edff",
+                  color: "#6719edff",
+                }}
+                onMouseEnter={(e) => (
+                  (e.target.style.background = "#6719edff"),
+                  (e.target.style.color = "#FFFFFF")
+                )}
+                onMouseLeave={(e) => (
+                  (e.target.style.background = "#FFFFFF"),
+                  (e.target.style.color = "#6719edff")
+                )}
+              >
                 <i className="fa-solid fa-user-plus me-1"></i> Sign up
               </button>
               <button
-                className="btn btn-outline-primary rounded-pill px-4"
-                style={{ width: "137px" }}
+                className="btn text-light rounded-pill px-4"
+                style={{ width: "137px", background: "#6719edff" }}
                 onClick={() => navigate("/login")}
               >
                 <i className="fa-solid fa-right-to-bracket me-1"></i> Login
@@ -92,14 +134,13 @@ function Landing() {
         </div>
       </nav>
 
-
       {/* Section 1 */}
       <div className="container my-5">
         <div className="row align-items-center">
           {/* Left side card */}
           <div className="col-md-6">
             <div className="card text-start p-4 border-0">
-              <h1 className="fw-bold text-primary mb-3">
+              <h1 className="fw-bold textColor mb-3">
                 PrintX – Fast, Smart & Reliable Printing
               </h1>
               <p className="lead text-muted mb-4">
@@ -108,16 +149,18 @@ function Landing() {
               </p>
               <div className="d-flex flex-wrap gap-3 mb-2">
                 <button
-                  className="btn btn-primary px-4 py-2 rounded-5 fw-semibold d-flex align-items-center gap-2"
-                  style={{ position: "relative", overflow: "hidden" }}
+                  className="btn px-4 py-2 text-light rounded-5 fw-semibold d-flex align-items-center gap-2"
+                  style={{
+                    position: "relative",
+                    overflow: "hidden",
+                    background: "#6719edff",
+                  }}
                   onClick={() => navigate("/signup")}
                 >
                   Sign Up Now
-                  <span
-                    className="d-flex align-items-center justify-content-center arrow-circle"
-                  >
-                    <i className="fa-solid fa-angles-right ms-"></i>                  </span>
-
+                  <span className="d-flex align-items-center justify-content-center arrow-circle">
+                    <i className="fa-solid fa-angles-right ms-"></i>{" "}
+                  </span>
                   <style>
                     {`
       .arrow-circle {
@@ -136,21 +179,20 @@ function Landing() {
     `}
                   </style>
                 </button>
-
               </div>
               <div className="d-flex flex-wrap gap-4 mt-4 text-muted small">
                 <span>
                   <i className="fas fa-bolt text-warning me-1"></i> Fast service
                 </span>
                 <span>
-                  <i className="fas fa-dollar-sign text-success me-1"></i> Affordable rates
+                  <i className="fas fa-dollar-sign text-success me-1"></i>{" "}
+                  Affordable rates
                 </span>
                 <span>
-                  <i className="fas fa-file-alt text-primary me-1"></i> Multiple formats supported
+                  <i className="fas fa-file-alt text-primary me-1"></i> Multiple
+                  formats supported
                 </span>
               </div>
-
-
             </div>
           </div>
 
@@ -169,15 +211,16 @@ function Landing() {
         </div>
       </div>
 
-
-
       {/* Section Mission */}
-      <div className="card border-0 shadow-sm  text-dark p-4 p-md-5" style={{
-        background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
-      }}>
-
+      <div
+        className="card border-0 shadow-sm  text-dark p-4 p-md-5"
+        style={{
+          background:
+            "linear-gradient(135deg, #e9f0ff 0%, #f6f9ff 50%, #ffffff 100%)",
+        }}
+      >
         <h1
-          className="fw-bold text-uppercase text-dark text-center  mb-4"
+          className="fw-bold text-uppercase textColor text-center  mb-4"
           style={{
             fontFamily: "revert-layer",
             fontSize: "clamp(1.3rem, 4vw, 2.3rem)",
@@ -222,7 +265,7 @@ function Landing() {
                 }}
               >
                 Our mission is to revolutionize the traditional printing process
-                in Pakistan by creating a  fully automated, and AI-enabled
+                in Pakistan by creating a fully automated, and AI-enabled
                 printing ecosystem. We aim to eliminate inefficiencies such as
                 long queues, manual handling, and high printing costs Through
                 intelligent recommendations, real-time monitoring, and
@@ -236,9 +279,12 @@ function Landing() {
       </div>
 
       {/* Section Comparison */}
-      <div className="card border-0 shadow-sm  text-dark p-3 p-md-4" style={{ background: "white" }}>
+      <div
+        className="card border-0 shadow-sm  text-dark p-3 p-md-4"
+        style={{ background: "white" }}
+      >
         <h1
-          className="fw-bold text-uppercase text-center text-dark  mb-4"
+          className="fw-bold text-uppercase text-center textColor  mb-4"
           style={{
             fontFamily: "revert-layer",
             fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
@@ -251,24 +297,38 @@ function Landing() {
           <div className="row">
             {/* Shopkeeper Benefits */}
             <div className="col-12 col-md-5 mb-4 mb-md-0">
-              <h3 className="fw-bold text-center  mb-4">
-                For Shopkeepers
-              </h3>
               <div className="row g-3">
                 {[
-                  { text: "Increased customer reach", icon: "fa-solid fa-chart-line" },
-                  { text: "Automated order management", icon: "fa-solid fa-bolt" },
-                  { text: "Secure and fast payments", icon: "fa-solid fa-credit-card" },
-                  { text: "Business growth insights", icon: "fa-solid fa-chart-pie" },
-                  { text: "Long-term customer loyalty", icon: "fa-solid fa-handshake" },
+                  {
+                    text: "Increased customer reach",
+                    icon: "fa-solid fa-chart-line",
+                  },
+                  {
+                    text: "Automated order management",
+                    icon: "fa-solid fa-bolt",
+                  },
+                  {
+                    text: "Secure and fast payments",
+                    icon: "fa-solid fa-credit-card",
+                  },
+                  {
+                    text: "Business growth insights",
+                    icon: "fa-solid fa-chart-pie",
+                  },
+                  {
+                    text: "Long-term customer loyalty",
+                    icon: "fa-solid fa-handshake",
+                  },
                 ].map((feature, i) => (
                   <div className="col-12" key={i}>
-                    <div className="card text-light  rounded-5 h-100 shadow-sm border-6 p-3 d-flex align-items-center flex-row"
+                    <div
+                      className="card text-light  rounded-5 h-100 shadow-sm border-6 p-3 d-flex align-items-center flex-row"
                       style={{
-                        backgroundImage: "linear-gradient(to right, #243949 0%, #517fa4 100%)",
-                      }}
-                    >
-                      <i className={`${feature.icon} me-2`} style={{ fontSize: "20px" }}></i>
+                        backgroundImage:"linear-gradient(to right, #4b0082 0%, #6719ed 100%)",}}                    >
+                      <i
+                        className={`${feature.icon} me-2`}
+                        style={{ fontSize: "20px" }}
+                      ></i>
                       <span className="mb-0 fw-semibold">{feature.text}</span>
                     </div>
                   </div>
@@ -282,36 +342,19 @@ function Landing() {
                 {/* Shopkeeper button */}
                 <div className="d-flex justify-content-center">
                   <button
-                    className="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2 fw-semibold"
+                    className="btn rounded-pill px-4 d-flex align-items-center gap-2 fw-semibold"
                     style={{
-                      background: "linear-gradient(45deg, #007bff, #00c6ff)",
-                      border: "none",
-                      boxShadow: "0 4px 12px rgba(0, 123, 255, 0.3)",
-                      transition: "all 0.3s ease-in-out"
+                     background: "#fff",
+                      border: "1px solid #6719edff",
+                      color: "#6719edff",
+                      height: "40px"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-3px)";
-                      e.currentTarget.style.boxShadow = "0 6px 16px rgba(0, 123, 255, 0.5)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
-                    }}
-                   onClick={() => navigate("/signup", { state: { role: "Shopkeeper" } })}
-
+                    onClick={() =>
+                      navigate("/signup", { state: { role: "Shopkeeper" } })
+                    }
                   >
                     Register as Shopkeeper
-                    <span
-                      className="d-flex justify-content-center align-items-center rounded-circle bg-light text-primary"
-                      style={{
-                        width: "28px",
-                        height: "28px",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-                        animation: "pulse 2s infinite"
-                      }}
-                    >
-                      <i className="fas fa-store"></i>
-                    </span>
+                    <i className="fas fa-store"></i>
                   </button>
 
                   <style>
@@ -323,10 +366,8 @@ function Landing() {
   }
 `}
                   </style>
-
                 </div>
               </div>
-
             </div>
 
             {/* Divider */}
@@ -354,23 +395,38 @@ function Landing() {
 
             {/* User Benefits */}
             <div className="col-12 col-md-5">
-              <h3 className="fw-bold text-center  mb-4">For Users</h3>
               <div className="row g-3">
                 {[
                   { text: "Easy online printing", icon: "fa-solid fa-print" },
                   { text: "Affordable pricing", icon: "fa-solid fa-tags" },
-                  { text: "Location-based shop selection", icon: "fa-solid fa-location-dot" },
-                  { text: "Save time & skip queues", icon: "fa-solid fa-clock" },
-                  { text: "Eco-friendly printing options", icon: "fa-solid fa-leaf" },
+                  {
+                    text: "Location-based shop selection",
+                    icon: "fa-solid fa-location-dot",
+                  },
+                  {
+                    text: "Save time & skip queues",
+                    icon: "fa-solid fa-clock",
+                  },
+                  {
+                    text: "Eco-friendly printing options",
+                    icon: "fa-solid fa-leaf",
+                  },
                 ].map((feature, i) => (
                   <div className="col-12" key={i}>
-                    <div className="card h-100 text-light  shadow-sm border-0 rounded-5 p-3 d-flex align-items-center flex-row" s style={{
-                      backgroundImage: "linear-gradient(to right, #243949 0%, #517fa4 100%)",
-                    }}>
-                      <i className={`${feature.icon} me-2`} style={{ fontSize: "20px" }}></i>
+                    <div
+                      className="card h-100 text-light  shadow-sm border-0 rounded-5 p-3 d-flex align-items-center flex-row"
+                      s
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(to right, #4b0082 0%, #6719ed 100%)",
+                      }}
+                    >
+                      <i
+                        className={`${feature.icon} me-2`}
+                        style={{ fontSize: "20px" }}
+                      ></i>
                       <span className="fw-semibold">{feature.text}</span>
                     </div>
-
                   </div>
                 ))}
               </div>
@@ -382,35 +438,19 @@ function Landing() {
                 {/* User button */}
                 <div className="d-flex justify-content-center">
                   <button
-                    className="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2 fw-semibold"
+                    className="btn rounded-pill px-4 d-flex align-items-center gap-2 fw-semibold"
                     style={{
-                      background: "linear-gradient(45deg, #007bff, #00c6ff)",
-                      border: "none",
-                      boxShadow: "0 4px 12px rgba(0, 123, 255, 0.3)",
-                      transition: "all 0.3s ease-in-out"
+                      background: "#fff",
+                      border: "1px solid #6719edff",
+                      color: "#6719edff",
+                      height: "40px"
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-3px)";
-                      e.currentTarget.style.boxShadow = "0 6px 16px rgba(0, 123, 255, 0.5)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.3)";
-                    }}
-                    onClick={() => navigate("/signup", { state: { role: "User" } })}
+                    onClick={() =>
+                      navigate("/signup", { state: { role: "User" } })
+                    }
                   >
                     Register as User
-                    <span
-                      className="d-flex justify-content-center align-items-center rounded-circle bg-light text-primary"
-                      style={{
-                        width: "28px",
-                        height: "28px",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-                        animation: "pulse 2s infinite"
-                      }}
-                    >
-                      <i className="fas fa-user"></i>
-                    </span>
+                    <i className="fas fa-user"></i>
                   </button>
 
                   <style>
@@ -422,31 +462,26 @@ function Landing() {
   }
 `}
                   </style>
-
                 </div>
               </div>
-
-
-
-
             </div>
           </div>
-
-
-
         </div>
       </div>
 
-
       {/* Section Smart Printing */}
-      <div className="card border-0 shadow-sm  text-dark bg-light text-center p-4 p-md-5" style={{
-        background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
-      }}>
+      <div
+        className="card border-0 shadow-sm  text-dark bg-light text-center p-4 p-md-5"
+        style={{
+          background:
+            "linear-gradient(135deg, #e9f0ff 0%, #f6f9ff 50%, #ffffff 100%)",
+        }}
+      >
         {/* Heading */}
-        <h2 className="fw-bold mb-3">Smart Printing Made Simple</h2>
+        <h2 className="fw-bold textColor mb-3">Smart Printing Made Simple</h2>
         <p className="text-muted mb-5">
-          Whether you're a shopkeeper or a user, our platform makes printing seamless
-          and efficient in just a few easy steps.
+          Whether you're a shopkeeper or a user, our platform makes printing
+          seamless and efficient in just a few easy steps.
         </p>
 
         {/* Features */}
@@ -483,8 +518,14 @@ function Landing() {
         </div>
 
         {/* Call To Action */}
-        <div className="mt-5  d-flex justify-content-center">
-          <button className="btn btn-dark rounded-pill px-4 d-flex align-items-center gap-2">
+        <div className="mt-5 d-flex justify-content-center">
+          <button
+            className="btn rounded-pill px-4 d-flex align-items-center gap-2 text-white fw-semibold"
+            style={{
+              background: "#6719ed", // solid purple
+              border: "none",
+            }}
+          >
             Get started Today
             <span
               className="d-inline-flex align-items-center justify-content-center bg-white text-dark rounded-circle"
@@ -509,20 +550,21 @@ function Landing() {
     `}
           </style>
         </div>
-
       </div>
 
       {/* Section Testimonial */}
       <div className="container text-center my-5">
         {/* Heading */}
-        <h2 className="fw-bold mb-3">Users & Shopkeepers Love PrintX</h2>
+        <h2 className="fw-bold textColor mb-3">Users & Shopkeepers Love PrintX</h2>
         <p className="text-muted mb-4">
-          Real stories from our community who trust PrintX for their printing needs.
+          Real stories from our community who trust PrintX for their printing
+          needs.
         </p>
 
         {/* Trust info */}
         <p className="fw-semibold mb-4">
-          Trusted by <span className="text-primary">10,000+</span> users & shopkeepers
+          Trusted by <span className="textColor">10,000+</span> users &
+          shopkeepers
           <br />
           <span className="text-warning">
             <i className="fas fa-star"></i>
@@ -541,7 +583,7 @@ function Landing() {
             <div
               className="card shadow-sm border-0 h-100 p-4 text-start position-relative rounded-4"
               style={{
-                background: "linear-gradient(135deg, #e0eafc, #f9f9f9)",
+                background: "linear-gradient(to right, #dccbff 0%, #f2eaff 100%)",
               }}
             >
               {/* Top section */}
@@ -555,8 +597,8 @@ function Landing() {
 
               {/* Review */}
               <p className="mt-3 mb-5">
-                “PrintX helped me grow my business and reach new customers online.
-                Orders are now streamlined and easy to manage.”
+                “PrintX helped me grow my business and reach new customers
+                online. Orders are now streamlined and easy to manage.”
               </p>
 
               {/* Stars */}
@@ -580,7 +622,7 @@ function Landing() {
             <div
               className="card shadow-sm border-0 h-100 p-4 text-start position-relative rounded-4"
               style={{
-                background: "linear-gradient(135deg, #e0eafc, #f9f9f9)",
+                background: "linear-gradient(to right, #dccbff 0%, #f2eaff 100%)",
               }}
             >
               <div className="d-flex justify-content-between align-items-center">
@@ -592,8 +634,8 @@ function Landing() {
               </div>
 
               <p className="mt-3 mb-5">
-                “Ordering prints online saves me so much time. I love the eco-friendly
-                options and instant shop selection feature.”
+                “Ordering prints online saves me so much time. I love the
+                eco-friendly options and instant shop selection feature.”
               </p>
 
               <div className="text-warning">
@@ -615,7 +657,7 @@ function Landing() {
             <div
               className="card shadow-sm border-0 h-100 p-4 text-start position-relative rounded-4"
               style={{
-                background: "linear-gradient(135deg, #e0eafc, #f9f9f9)",
+                background: "linear-gradient(to right, #dccbff 0%, #f2eaff 100%)",
               }}
             >
               <div className="d-flex justify-content-between align-items-center">
@@ -627,8 +669,8 @@ function Landing() {
               </div>
 
               <p className="mt-3 mb-5">
-                “Managing printing requests has never been easier. PrintX makes it
-                simple, and efficient for both me and my customers.”
+                “Managing printing requests has never been easier. PrintX makes
+                it simple, and efficient for both me and my customers.”
               </p>
 
               <div className="text-warning">
@@ -647,13 +689,10 @@ function Landing() {
         </div>
       </div>
 
-
-
       {/* Section Footer */}
-      <div className="text-light py-5 bg-dark mt-5" >
+      <div className="text-light py-5 bg-dark mt-5">
         <div className="container">
           <div className="row g-4">
-
             {/* Brand */}
             <div className="col-md-3">
               <h4 className="fw-bold text-uppercase">
@@ -664,40 +703,96 @@ function Landing() {
                 Upload, pay, and collect your prints with ease.
               </p>
               <div className="d-flex gap-3">
-                <a href="/" className="fs-5"><i className="fab fa-facebook" style={{ color: "#ffffffff" }}></i></a>
-                <a href="/" className="fs-5"><i className="fab fa-linkedin" style={{ color: "#ffffffff" }}></i></a>
-                <a href="/" className="fs-5"><i className="fab fa-instagram" style={{ color: "#ffffffff" }}></i></a>
-                <a href="/" className="fs-5"><i className="fab fa-whatsapp" style={{ color: "#ffffffff" }}></i></a>
+                <a href="/" className="fs-5">
+                  <i
+                    className="fab fa-facebook"
+                    style={{ color: "#ffffffff" }}
+                  ></i>
+                </a>
+                <a href="/" className="fs-5">
+                  <i
+                    className="fab fa-linkedin"
+                    style={{ color: "#ffffffff" }}
+                  ></i>
+                </a>
+                <a href="/" className="fs-5">
+                  <i
+                    className="fab fa-instagram"
+                    style={{ color: "#ffffffff" }}
+                  ></i>
+                </a>
+                <a href="/" className="fs-5">
+                  <i
+                    className="fab fa-whatsapp"
+                    style={{ color: "#ffffffff" }}
+                  ></i>
+                </a>
               </div>
-
             </div>
 
             {/* Quick Links */}
             <div className="col-md-3">
               <h6 className="fw-bold mb-3">Quick Links</h6>
               <ul className="list-unstyled small">
-                <li><i className="fa fa-headset me-2"></i><a href="/" className="text-decoration-none text-light">Customer Support</a></li>
-                <li><i className="fa fa-circle-question me-2"></i><a href="/" className="text-decoration-none text-light">FAQs</a></li>
-                <li><i className="fa fa-file-contract me-2"></i><a href="/" className="text-decoration-none text-light">Terms & Conditions</a></li>
-                <li><i className="fa fa-shield-halved me-2"></i><a href="/" className="text-decoration-none text-light">Privacy Policy</a></li>
+                <li>
+                  <i className="fa fa-headset me-2"></i>
+                  <a href="/" className="text-decoration-none text-light">
+                    Customer Support
+                  </a>
+                </li>
+                <li>
+                  <i className="fa fa-circle-question me-2"></i>
+                  <a href="/" className="text-decoration-none text-light">
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <i className="fa fa-file-contract me-2"></i>
+                  <a href="/" className="text-decoration-none text-light">
+                    Terms & Conditions
+                  </a>
+                </li>
+                <li>
+                  <i className="fa fa-shield-halved me-2"></i>
+                  <a href="/" className="text-decoration-none text-light">
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Service Hours */}
             <div className="col-md-3">
               <h6 className="fw-bold mb-3">Service Hours</h6>
-              <p className="small mb-1"><i className="fa fa-clock me-2"></i> Mon–Sat: 8:00 AM – 10:00 PM</p>
-              <p className="small mb-1"><i className="fa fa-clock me-2"></i> Sunday: 10:00am - 11:00pm</p>
-              <p className="small"><i className="fa fa-bolt me-2"></i> Emergency prints on request</p>
+              <p className="small mb-1">
+                <i className="fa fa-clock me-2"></i> Mon–Sat: 8:00 AM – 10:00 PM
+              </p>
+              <p className="small mb-1">
+                <i className="fa fa-clock me-2"></i> Sunday: 10:00am - 11:00pm
+              </p>
+              <p className="small">
+                <i className="fa fa-bolt me-2"></i> Emergency prints on request
+              </p>
             </div>
 
             {/* Newsletter */}
             <div className="col-md-3">
               <h6 className="fw-bold mb-3">Stay Updated</h6>
-              <p className="small">Get offers, discounts & tips in your inbox.</p>
+              <p className="small">
+                Get offers, discounts & tips in your inbox.
+              </p>
               <div className="input-group">
-                <input type="email" className="form-control form-control-md rounded-start" placeholder="Your email" />
-                <button className="btn btn-primary btn-sm rounded-end">Subscribe</button>
+                <input
+                  type="email"
+                  className="form-control form-control-md rounded-start"
+                  placeholder="Your email"
+                />
+                <button
+                  className="btn text-light btn-sm rounded-end"
+                  style={{ background: "#6719edff" }}
+                >
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>
@@ -705,11 +800,11 @@ function Landing() {
           {/* Bottom Note */}
           <hr className="border-secondary my-4" />
           <p className="small text-center mb-0">
-            © {new Date().getFullYear()} PrintX | Smart Printing System. All rights reserved.
+            © {new Date().getFullYear()} PrintX | Smart Printing System. All
+            rights reserved.
           </p>
         </div>
       </div>
-
     </div>
   );
 }
