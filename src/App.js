@@ -6,6 +6,7 @@ import Login from './pges/Login';
 import {Routes, Route} from 'react-router-dom';
  import Splash from './pges/Splash';
 import SignUp from './pges/SignUp';
+import MobileNav from './component/MobileNav';
 function App() {
   return (
    <>
@@ -13,7 +14,7 @@ function App() {
     <Routes>
       <Route path="/" element={isMobile ? <Splash /> : <Landing />} />
       <Route path='/splash' element={<Splash />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<MobileNav />} />
       <Route path="/signup" element={<SignUp />} />
     </Routes>
    </>
