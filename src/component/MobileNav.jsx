@@ -26,6 +26,7 @@ function MobileNav() {
         backgroundColor: "rgba(0, 0, 0, 0.87)",
         height: "60px",
         display: "flex",
+        
         justifyContent: "space-around",
         alignItems: "center",
         zIndex: 1000,
